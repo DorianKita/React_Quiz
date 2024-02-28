@@ -27,12 +27,12 @@ export default function Question({ onSelectAnswer, onSkipAnswer, index }) {
     }, 1000);
   }
 
-  let answetState = "";
+  let answerState = "";
 
   if (answer.selectedAnswer && answer.isCorrect !== null) {
-    answetState = answer.isCorrect ? "correct" : "wrong";
+    answerState = answer.isCorrect ? "correct" : "wrong";
   } else if (answer.selectedAnswer) {
-    answetState = "answered";
+    answerState = "answered";
   }
 
   return (
@@ -42,7 +42,7 @@ export default function Question({ onSelectAnswer, onSkipAnswer, index }) {
       <Answers
         answers={QUESTIONS[index].answers}
         selectedAnswer={answer.selectedAnswer}
-        answerState={answer.isCorrect}
+        answerState={answerState}
         onSelect={handleSelectAnswer}
       />
     </div>
