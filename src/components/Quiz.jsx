@@ -4,7 +4,7 @@ import trophyLogo from "../assets/quiz-complete.png";
 import Question from "./Question.jsx";
 
 export default function Quiz() {
-  const [userAnswers, setAnswerState] = useState("");
+  const [userAnswers, setUserAnswers] = useState([]);
   const activeQuestionIndex = userAnswers.length;
 
   const quizIsComplete = activeQuestionIndex === QUESTIONS.length;
@@ -31,6 +31,7 @@ export default function Quiz() {
     <div id="quiz">
       <Question
         key={activeQuestionIndex}
+        index={activeQuestionIndex}
         onSelectAnswer={handleSelectAnswer}
         onSkipAnswer={handleSkipAnswer}
       />
